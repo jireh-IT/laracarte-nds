@@ -1,11 +1,9 @@
 <?php
 
 
-Route::get('/', ['as' => 'home',
-				'uses' => 'PagesController@home'
-				]);
+Route::get('/', 'PagesController@home')->name('home');
 
 
-Route::get('/about', ['as' => 'about',
-				'uses' => 'PagesController@about'
-				]);
+Route::get('/about','PagesController@about' )->name('about');
+
+Route::get('/contact', 'ContactsController@create')->name('contact');

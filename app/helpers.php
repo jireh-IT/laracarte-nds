@@ -1,4 +1,4 @@
-<?<?php 
+<?php 
 
 function page_title($title){
 	$base_title = "Laracarte - list of Artisans";
@@ -10,4 +10,10 @@ if ($title =="") {
 
 }
 
- ?>
+function set_active_route($route){
+
+	return Route::is($route) ? 'active' : ""; 
+
+
+}
+

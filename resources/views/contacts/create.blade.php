@@ -3,30 +3,30 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+		<div class="col-md-8  col-sm-10 mx-auto">
 			<h2>Get In Touch</h2>
 			<p class="text-muted">If you having trouble with this service, please
 			<a href="mailto:{{config('laracarte.admin_support_email')}} "> ask for help</a>.</p>
 
-			<form action="{{ route('contact') }}" method="POST" >
+			<form action="{{ route('contact') }}" method="POST" novalidate>
 				@csrf
 
-				<div class="form-group {{ $errors->has('name') ? 'has-error': ""  }}">
+				<div class="form-group ">
 					<label for="name" class="control-lable">Name</label>
-					<input type="text" name="name" id="name" value="{{old('name')}}" class="form-control" required="required">
-					{!! $errors->first('name', '<span class="help-block">:message</span>')  !!}
+					<input type="text" name="name" id="name" value="{{old('name')}}" class="form-control {{ $errors->has('name') ? 'is-invalid': ""  }}" required="required">
+					{!! $errors->first('name', '<div class="invalid-feedback">:message</div>')  !!}
 				</div>
 
-				<div class="form-group {{ $errors->has('email') ? 'has-error': ""  }}">
+				<div class="form-group">
 					<label for="email" class="control-lable">Email</label>
-					<input type="email" name="email" id="email" value="{{old('email')}}" class="form-control" required="required">
-					{!! $errors->first('email', '<span class="help-block">:message</span>')  !!}
+					<input type="email" name="email" id="email" value="{{old('email')}}" class="form-control {{ $errors->has('email') ? 'is-invalid': ""  }}" required="required">
+					{!! $errors->first('email', '<div class="invalid-feedback">:message</div>')  !!}
 				</div>
 
-				<div class="form-group {{ $errors->has('message') ? 'has-error': ''  }}">
+				<div class="form-group">
 					<label for="message" class="control-lable sr-only">Message</label>
-					<textarea name="message" id="message" rows="10" cols="10" class="form-control " required="required">{{old('message')}}</textarea>
-					{!! $errors->first('message', '<span class="help-block">:message</span>')  !!}
+					<textarea name="message" id="message" rows="10" cols="10" class="form-control {{ $errors->has('message') ? 'is-invalid': ""  }}" required="required">{{old('message')}}</textarea>
+					{!! $errors->first('message', '<div class="invalid-feedback">:message</div>')  !!}
 				</div>
 
 				<div class="form-group">

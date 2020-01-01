@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-md-6">
 			<p class="alert alert-warning">
-				<i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+				<i class="fas fa-exclamation-triangle"></i>
 				<strong></i>this app has been built by <a href="https://twitter.com/JirehIt">@Jireh_IT</a> for learning purposes</strong>
 			</p>
 		</div>
